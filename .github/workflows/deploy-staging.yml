@@ -28,7 +28,7 @@ jobs:
         name: webpack artifacts
         path: public/
         
-  build-docker-image:
+  Build-Docker-Image:
     runs-on: ubuntu-latest
     needs: build
     name: Build image and store in GH container registry
@@ -67,7 +67,7 @@ jobs:
           
   deploy-to-azure:
     runs-on: ubuntu-latest
-    needs: [build-docker-image]
+    needs: [Build-Docker-Image]
     name: Deploy app container to Azure
     steps:
       - name: Login to Az Cli
